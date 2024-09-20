@@ -52,7 +52,30 @@ class Homepage extends StatelessWidget {
             ),
         
             Divider(height: 5, color: Colors.blueGrey.shade100),
-        
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(14.0),
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 16),
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.blueGrey.shade100,
+                      borderRadius: BorderRadius.circular(50)
+                    ),
+                    child: const Text(
+                      "May 24, 2022",
+                      style: TextStyle(
+                        color: Colors.blueGrey
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
             TransactionHistoryCard(
               profileImage: "assets/images/mtn.png",
               receiver: "Emmanuel Rockson \nKwabena Uncle Ebo",

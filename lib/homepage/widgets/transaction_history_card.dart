@@ -23,8 +23,6 @@ class TransactionHistoryCard extends StatelessWidget {
       margin: const EdgeInsets.all(16),
       child: Column(
         children: [
-
-
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -97,7 +95,7 @@ class TransactionHistoryCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50)
                       ),
                       child: Padding(
-                        padding: EdgeInsets.all(6.0),
+                        padding: const EdgeInsets.all(6.0),
                         child: Row(
                           children: [
                             Icon(Icons.check_circle, color: color),
