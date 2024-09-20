@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
 
 class TransactionHistoryCard extends StatelessWidget {
-  const TransactionHistoryCard({super.key});
+
+  final String receiver;
+  final Color color;
+  final Color colorShade;
+  final String transactionStatus;
+  final String profileImage;
+
+  const TransactionHistoryCard({
+    super.key,
+    required this.receiver,
+    required this.color,
+    required this.colorShade,
+    required this.transactionStatus,
+    required this.profileImage
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,16 +54,16 @@ class TransactionHistoryCard extends StatelessWidget {
                           decoration: const BoxDecoration(
                             shape: BoxShape.circle
                           ),
-                          child: Image.asset("assets/images/mtn.png", fit: BoxFit.cover,),
+                          child: Image.asset(profileImage, fit: BoxFit.cover,),
                         ),
                       ),
 
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            "Emmanuel Rockson \nKwabena Uncle Ebo",
-                            style: TextStyle(
+                          Text(
+                            receiver,
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 18
                             ),
@@ -79,19 +93,19 @@ class TransactionHistoryCard extends StatelessWidget {
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.green.shade100,
+                        color: colorShade,
                         borderRadius: BorderRadius.circular(50)
                       ),
-                      child: const Padding(
+                      child: Padding(
                         padding: EdgeInsets.all(6.0),
                         child: Row(
                           children: [
-                            Icon(Icons.check_circle, color: Colors.green),
+                            Icon(Icons.check_circle, color: color),
 
                             Text(
-                              "Successful",
+                              transactionStatus,
                               style: TextStyle(
-                                  color: Colors.green
+                                  color: color
                               ),
                             )
                           ],
@@ -99,7 +113,7 @@ class TransactionHistoryCard extends StatelessWidget {
                       ),
                     ),
 
-                    const Text("GHC 500", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22))
+                    const Text("GHC 500", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24))
                   ],
                 ),
               )
@@ -144,7 +158,7 @@ class TransactionHistoryCard extends StatelessWidget {
                     ),
 
                     Text(
-                      "Cool your heart",
+                      "Cool your heart wai",
                       style: TextStyle(
                           color: Colors.black
                       ),

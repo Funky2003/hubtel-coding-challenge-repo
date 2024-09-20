@@ -7,54 +7,69 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Homepage"),),
-      body: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.blueGrey.shade100,
-              borderRadius: BorderRadius.all(Radius.circular(8))
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  margin: EdgeInsets.all(4),
-                  padding: EdgeInsets.symmetric(horizontal: 42, vertical: 12),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(8))
-                  ),
-                  child: Text(
-                    "History",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blueGrey.shade100,
+                borderRadius: const BorderRadius.all(Radius.circular(8))
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(4),
+                    padding: const EdgeInsets.symmetric(horizontal: 42, vertical: 12),
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(8))
                     ),
-                  ),
-                ),
-                SizedBox(width: 14),
-                Container(
-                  margin: EdgeInsets.only(right: 4),
-                  child: Text(
-                    "Transaction Summary",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.normal,
+                    child: const Text(
+                      "History",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
                         fontSize: 22
+                      ),
                     ),
                   ),
-                )
-              ],
+                  const SizedBox(width: 14),
+                  Container(
+                    margin: const EdgeInsets.only(right: 4),
+                    child: const Text(
+                      "Transaction Summary",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.normal,
+                          fontSize: 22
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
+        
+            Divider(height: 5, color: Colors.blueGrey.shade100),
+        
+            TransactionHistoryCard(
+              profileImage: "assets/images/mtn.png",
+              receiver: "Emmanuel Rockson \nKwabena Uncle Ebo",
+              color: Colors.green,
+              colorShade: Colors.green.shade100,
+              transactionStatus: "Successful",
+            ),
 
-          Divider(height: 5, color: Colors.blueGrey.shade100),
-
-          TransactionHistoryCard()
-        ],
+            TransactionHistoryCard(
+              profileImage: "assets/images/absa.jpeg",
+              receiver: "Absa Bank",
+              color: Colors.red,
+              colorShade: Colors.red.shade100,
+              transactionStatus: "Failed",
+            ),
+          ],
+        ),
       ),
     );
   }
