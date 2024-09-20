@@ -96,6 +96,19 @@ class Homepage extends StatelessWidget {
         ),
       ),
 
+      floatingActionButton: FloatingActionButton.extended(
+          onPressed: (){},
+
+        backgroundColor: Colors.green.shade300,
+        label: const Text("SEND NEW", style: TextStyle(fontSize: 22, color: Colors.white)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8)
+        ),
+        isExtended: true,
+        icon: const Icon(Icons.add_circle_rounded, color: Colors.white, size: 34,),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+
       bottomNavigationBar: const BottomNavbar(),
     );
   }
