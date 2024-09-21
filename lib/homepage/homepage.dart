@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_projetcs/homepage/widgets/bottom_navbar.dart';
+import 'package:flutter_projetcs/homepage/widgets/search_bar.dart';
 import 'package:flutter_projetcs/homepage/widgets/transaction_history_card.dart';
 
 class Homepage extends StatelessWidget {
@@ -53,6 +54,10 @@ class Homepage extends StatelessWidget {
             ),
         
             Divider(height: 5, color: Colors.blueGrey.shade100),
+
+            const SizedBox(height: 12),
+
+            const CustomSearchBar(),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
